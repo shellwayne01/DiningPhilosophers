@@ -1,4 +1,4 @@
-import DinnerTime
+from DinnerTime import DinnerTime
 
 test = DinnerTime(5)
-print(DinnerTime)
+test.tableStatus()

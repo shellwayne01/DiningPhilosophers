@@ -1,21 +1,11 @@
 # Import
-class Philosopher (object):
-    #Variables to define
-    # state - ready, running(eating), waiting, start, done
-    # ID or can get from the thread
-    # priority
-    # lFork
-    # rFork
-
-    """docstring fo Philosopher ."""
-    def __init__(self, arg):
-        id = 0
-        state = none
-        priority = 0
-        lFork = "none"
-        rFork = "none"
-        supe Philosopher , self).__init__()
-        self.arg = arg
+class Philosopher:
+    def Philosopher(self, arg):
+        self.id = 0
+        self.state = "none"
+        self.priority = 0
+        self.lFork = "none"
+        self.rFork = "none"
 
     def getLFork():
         #how to access table forks
