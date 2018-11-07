@@ -6,27 +6,23 @@ class DinnerTime(object): #change the name to something else
     idCounter = 0
 
     def __init__(self, numP):
-        if numP = 5{
-        for person in numP:
-            addPerson()
-            fork = "fork"
-            fork.append(forks)
-        }
+        if numP == 5:
+            for person in range(numP):
+                addPerson()
+                fork = "fork"
+                fork.append(forks)
         #start thread execution on all philosophers
-        super(, self).__init__()
-        self.arg = arg
 
     def addPerson():
-        idCounter++
+        idCounter = idCounter+1
         person = Philosopher()
         person.id = idCounter
         person.lFork = forks[ ((idCounter*2) - 1) % forks.count()]
         person.rFork = forks[idCounter] #modulus
-        print ("New Person added to the dining table person %)
+        print ("New Person added to the dining table person" %(person))
         philosophers.append(person)
 
     def tableStatus():
         print("There are %s philosophers at the dining table." % (philosophers.count())
-        for person in Philosophers:
-            print("\nPhilosopher %s: \nstatus = %s\nleft fork= %s\nright fork = %s" %
-            (person.id, person.state, person.lFork, person.rFork))
+        for person in philosophers:
+            print("\nPhilosopher %s: \nstatus = %s\nleft fork= %s\nright fork = %s" % (person.id, person.state, person.lFork, person.rFork))
