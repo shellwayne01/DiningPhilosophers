@@ -1,3 +1,4 @@
+import Philosopher
 class DinnerTime(object): #change the name to something else
     """docstring for ."""
     #Variables
