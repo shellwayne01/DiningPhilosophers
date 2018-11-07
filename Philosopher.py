@@ -4,17 +4,17 @@ class Philosopher:
         self.id = 0
         self.state = "none"
         self.priority = 0
-        self.lFork = "none"
-        self.rFork = "none"
+        self.lChopstick = "none"
+        self.rChopstick = "none"
 
-    def getLFork():
-        #how to access table forks
-        print(lFork)
+    def getLChop():
+        #how to access table Chopsticks
+        print(lChopstick)
 
-    def getRFork():
-        #how to access table forks
-        print(rFork)
+    def getRChop():
+        #how to access table Chopsticks
+        print(rChopstick)
 
     def eat():
-        #how to access table forks
+        #how to access table Chopsticks
         print("eating")
