@@ -2,7 +2,7 @@ import threading
 import random
 import time
 # from DinnerTime import DinnerTime
-# from Philosopher import Philosopher
+from Philosopher import Philosopher
 
 # test = DinnerTime(5)
 # test.tableStatus()
