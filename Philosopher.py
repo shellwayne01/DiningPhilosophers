@@ -20,21 +20,23 @@ import time
     # def eat():
     #     #how to access table Chopsticks
     #     print("eating")
+
 #Commented syntax only works in python v.3.6
 class Philosopher(object):
 
     def __init__(self, leftChopStick, rightChopStick):
-        self.leftChopStick = leftChopStick  #what data type are these? I was using int
+        self.leftChopStick = leftChopStick
         self.rightChopStick = rightChopStick
 
+        #Thread gets a random time to complete their actions after getting both chopsticks
     def doAction(self, action):
         # print(f'{threading.current_thread().getName()} {action}')
         print("Thread:%s\n%s" % (threading.current_thread().getName(), action))
-        time.sleep(random.randint(1, 5)) #why random sleep time for various actions?
+        time.sleep(random.randint(1, 2))
 
     def run(self):
-        try:
-            while True: #whats true? self?
+        try: #context manager -- "with"
+            while True:
                 # self.doAction(f'{time.time()}: Thinking')
                 self.doAction("%s: Thinking" % (time.time()))
                 with self.leftChopStick:

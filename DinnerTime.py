@@ -9,7 +9,7 @@ class DinnerTime: #change the name to something else
                 chopstick = x
                 self.chopsticks.append(chopstick)
             for person in range(numP):
-                self.addPerson()
+                self.addPerson()1
         #start thread execution on all philosophers
 
     def addPerson(self):

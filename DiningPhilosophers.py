@@ -1,6 +1,4 @@
 import threading
-import random
-import time
 # from DinnerTime import DinnerTime
 from Philosopher import Philosopher
 
@@ -16,16 +14,16 @@ if __name__ == '__main__':
     chopSticks = [0 for _ in range(5)]
 
     for i in range(len(chopSticks)):
-        chopSticks[i] = threading.Lock()
+        chopSticks[i] = threading.Lock() #lock ensures that no two threads will use the same chopstick
 
     for i in range(len(philosophers)):
         leftChopStick = chopSticks[i]
         rightChopStick = chopSticks[(i+1) % len(chopSticks)]
 
         if i == len(philosophers) - 1:
-            philosophers[i] = Philosopher(rightChopStick, leftChopStick) #review. Circular array is better
+            philosophers[i] = Philosopher(rightChopStick, leftChopStick)
         else:
-            philosophers[i] = Philosopher(leftChopStick, rightChopStick)
+            philosophers[i] = Philosopher(leftChopStick, rightChopStick)  #Can use a circular array to optimize
 
         # t = threading.Thread(target=philosophers[i].run, name=f'Philosopher {i+1}') #target here is a runnable class
         name = "Philosopher %s" % (i+1)
