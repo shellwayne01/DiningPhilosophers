@@ -8,7 +8,7 @@ if __name__ == '__main__':
     chopSticks = [0 for _ in range(5)]
 
     for i in range(len(chopSticks)):
-        chopSticks[i] = threading.Lock() #lock ensures that no two threads will use the same chopstick
+        chopSticks[i] = threading.Lock() # lock ensures that no two threads will use the same chopstick
 
     for i in range(len(philosophers)):
         leftChopStick = chopSticks[i]
