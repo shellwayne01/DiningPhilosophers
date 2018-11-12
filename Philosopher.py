@@ -1,6 +1,8 @@
 import threading
 import random
 import time
+
+#Older version of Philosopher class
 #class Philosopher:
     # def Philosopher(self, arg):
     #     self.id = 0
@@ -19,9 +21,13 @@ import time
     #
     # def eat():
     #     #how to access table Chopsticks
-    #     print("eating")
+    #     print("Now eating")
+    # def think():
+    #     #how to access table Chopsticks
+    #     print("Now thinking")
 
-#Commented syntax only works in python v.3.6
+#Improved version of Philosopher class
+#Commented syntax is the same code in python v.2.7
 class Philosopher(object):
 
     def __init__(self, leftChopStick, rightChopStick):
@@ -30,24 +36,24 @@ class Philosopher(object):
 
         #Thread gets a random time to complete their actions after getting both chopsticks
     def doAction(self, action):
-        # print(f'{threading.current_thread().getName()} {action}')
-        print("Thread:%s\n%s" % (threading.current_thread().getName(), action))
+        print(f'{threading.current_thread().getName()} {action}')
+        # print("Thread:%s\n%s" % (threading.current_thread().getName(), action))
         time.sleep(random.randint(1, 2))
 
     def run(self):
         try: #context manager -- "with"
             while True:
-                # self.doAction(f'{time.time()}: Thinking')
-                self.doAction("%s: Thinking" % (time.time()))
+                self.doAction(f'{time.time()}: Thinking')
+                # self.doAction("%s: Thinking" % (time.time()))
                 with self.leftChopStick:
-                    # self.doAction(f'{time.time()}: Picked up left chopstick')
-                    self.doAction("%s: Picked up left chopstick" %(time.time()))
+                    self.doAction(f'{time.time()}: Picked up left chopstick')
+                    # self.doAction("%s: Picked up left chopstick" %(time.time()))
                     with self.rightChopStick:
-                        # self.doAction(f'{time.time()}: Picked up right chopstick - eating')
-                        # self.doAction(f'{time.time()}: Put down right chopstick')
-                        self.doAction("%s: Picked up right chopstick - eating" %(time.time()))
-                        self.doAction("%s: Put down right chopstick" % (time.time()))
-                    # self.doAction(f'{time.time()}: Put down left chopstick. Back to thinking')
-                    self.doAction("%s: Put down left chopstick. Back to thinking" %(time.time()))
+                        self.doAction(f'{time.time()}: Picked up right chopstick - eating') #can break this up 
+                        self.doAction(f'{time.time()}: Put down right chopstick')
+                        # self.doAction("%s: Picked up right chopstick - eating" %(time.time()))
+                        # self.doAction("%s: Put down right chopstick" % (time.time()))
+                    self.doAction(f'{time.time()}: Put down left chopstick. Back to thinking')
+                    # self.doAction("%s: Put down left chopstick. Back to thinking" %(time.time()))
         except Exception as E:
             print(E)

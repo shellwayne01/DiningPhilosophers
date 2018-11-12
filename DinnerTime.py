@@ -1,21 +1,24 @@
 from Philosopher import Philosopher
-class DinnerTime: #change the name to something else
+
+#DinnerTime class was used with our older Philosopher class in our initial attempted solution
+#Python v.2.7
+class DinnerTime:
     def __init__(self, numP):
-        self.philosophers = [] #fill with Philosopher objects
-        self.chopsticks = [] #filled with strings for now. How do we know the order of the chopsticks?
+        self.philosophers = []
+        self.chopsticks = []
         self.idCounter = 0
         if numP == 5:
             for x in range(numP):
                 chopstick = x
                 self.chopsticks.append(chopstick)
             for person in range(numP):
-                self.addPerson()1
+                self.addPerson()
         #start thread execution on all philosophers
 
     def addPerson(self):
         person = Philosopher()
         person.id = self.idCounter
-        person.state = "none"
+        person.state = "thinking"
         person.priority = self.idCounter
         person.lChopstick = self.chopsticks[(self.idCounter - 1) % len(self.chopsticks)]
         person.rChopstick = self.chopsticks[self.idCounter]

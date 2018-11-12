@@ -2,12 +2,6 @@ import threading
 # from DinnerTime import DinnerTime
 from Philosopher import Philosopher
 
-# test = DinnerTime(5)
-# test.tableStatus()
-
-# test = Philosopher(4,0)
-# test.run()
-
 if __name__ == '__main__':
 
     philosophers = [0 for _ in range(5)]
@@ -23,9 +17,11 @@ if __name__ == '__main__':
         if i == len(philosophers) - 1:
             philosophers[i] = Philosopher(rightChopStick, leftChopStick)
         else:
-            philosophers[i] = Philosopher(leftChopStick, rightChopStick)  #Can use a circular array to optimize
+            philosophers[i] = Philosopher(leftChopStick, rightChopStick)  #Can use a circular array to optimize this
 
-        # t = threading.Thread(target=philosophers[i].run, name=f'Philosopher {i+1}') #target here is a runnable class
-        name = "Philosopher %s" % (i+1)
-        t = threading.Thread(target=philosophers[i].run, name=name)
+        t = threading.Thread(target=philosophers[i].run, name=f'Philosopher {i+1}') #target here is a runnable class
+        # name = "Philosopher %s" % (i+1)
+        # t = threading.Thread(target=philosophers[i].run, name=name)
         t.start()
+
+        # Control + C to quit and end threads
