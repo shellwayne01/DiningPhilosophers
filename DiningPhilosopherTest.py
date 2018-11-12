@@ -30,10 +30,10 @@ class Philosopher(object):
 
 if __name__ == '__main__':
 
-    philosophers = [0 for _ in range(5)]
+    philosophers = [0 for _ in range(5)] #fills array with five 0s as placeholders
     chopSticks = [0 for _ in range(5)]
 
-    for i in range(len(chopSticks)):
+    for i in range(len(chopSticks)): #sets up locking ability for threads when they use chopsticks
         chopSticks[i] = threading.Lock()
 
     for i in range(len(philosophers)):
