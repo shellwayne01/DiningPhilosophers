@@ -27,7 +27,7 @@ import time
     #     print("Now thinking")
 
 #Improved version of Philosopher class
-#Commented syntax is the same code in python v.2.7
+#Commented syntax is the same code in Python v.2.7
 class Philosopher(object):
 
     def __init__(self, leftChopStick, rightChopStick):
@@ -49,7 +49,7 @@ class Philosopher(object):
                     self.doAction(f'{time.time()}: Picked up left chopstick')
                     # self.doAction("%s: Picked up left chopstick" %(time.time()))
                     with self.rightChopStick:
-                        self.doAction(f'{time.time()}: Picked up right chopstick - eating') #can break this up 
+                        self.doAction(f'{time.time()}: Picked up right chopstick - eating') #can break this up
                         self.doAction(f'{time.time()}: Put down right chopstick')
                         # self.doAction("%s: Picked up right chopstick - eating" %(time.time()))
                         # self.doAction("%s: Put down right chopstick" % (time.time()))

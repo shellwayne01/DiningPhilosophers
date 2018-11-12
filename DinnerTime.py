@@ -1,5 +1,4 @@
 from Philosopher import Philosopher
-
 #DinnerTime class was used with our older Philosopher class in our initial attempted solution
 #Python v.2.7
 class DinnerTime:
